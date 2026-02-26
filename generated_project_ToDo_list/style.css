@@ -1,0 +1,249 @@
+/*
+  Global CSS variables and theme definitions
+*/
+:root {
+  /* Primary palette */
+  --color-primary: #3498db;           /* blue */
+  --color-secondary: #2ecc71;         /* green */
+  --color-accent: #e74c3c;            /* red */
+
+  /* Light theme background and text */
+  --color-background: #f5f5f5;
+  --color-text: #333333;
+
+  /* Dark‑mode equivalents */
+  --color-primary-dark: #2980b9;
+  --color-secondary-dark: #27ae60;
+  --color-accent-dark: #c0392b;
+  --color-background-dark: #1e1e1e;
+  --color-text-dark: #f0f0f0;
+}
+
+/* Dark mode – swap the palette */
+body.dark-mode {
+  --color-primary: var(--color-primary-dark);
+  --color-secondary: var(--color-secondary-dark);
+  --color-accent: var(--color-accent-dark);
+  --color-background: var(--color-background-dark);
+  --color-text: var(--color-text-dark);
+}
+
+/* -------------------------------------------------------------------
+   CSS Reset – removes default margin/padding and sets box‑sizing
+------------------------------------------------------------------- */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--color-background);
+  color: var(--color-text);
+}
+
+/* -------------------------------------------------------------------
+   Layout – #app container
+------------------------------------------------------------------- */
+#app {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* -------------------------------------------------------------------
+   Header & Dark‑mode toggle
+------------------------------------------------------------------- */
+.todo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.todo-header h1 {
+  font-size: 1.8rem;
+  margin: 0;
+  color: var(--color-text);
+}
+
+#dark-mode-toggle {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--color-text);
+  transition: transform 0.2s;
+}
+
+#dark-mode-toggle:hover {
+  transform: rotate(20deg);
+}
+
+/* -------------------------------------------------------------------
+   Todo input form
+------------------------------------------------------------------- */
+.todo-input form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.todo-input input,
+.todo-input textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid var(--color-primary);
+  border-radius: 4px;
+  font: inherit;
+  background: var(--color-background);
+  color: var(--color-text);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.todo-input input:focus,
+.todo-input textarea:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 2px rgba(231, 76, 60, 0.2);
+}
+
+.todo-input button[type="submit"] {
+  align-self: flex-start;
+  background: var(--color-accent);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.todo-input button[type="submit"]:hover {
+  background: var(--color-accent-dark);
+}
+
+/* -------------------------------------------------------------------
+   Todo list
+------------------------------------------------------------------- */
+.todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.todo-item {
+  background: var(--color-background);
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s, transform 0.2s;
+}
+
+.todo-item:hover {
+  background: var(--color-primary);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* -------------------------------------------------------------------
+   Footer controls (filters, clear button) – simple styling
+------------------------------------------------------------------- */
+.todo-controls {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.todo-controls .filters button {
+  background: transparent;
+  border: 1px solid var(--color-primary);
+  color: var(--color-text);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.todo-controls .filters button[aria-pressed="true"] {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.todo-controls #clear-completed {
+  background: var(--color-accent);
+  color: #fff;
+  border: none;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.todo-controls #clear-completed:hover {
+  background: var(--color-accent-dark);
+}
+
+/* -------------------------------------------------------------------
+   Responsive breakpoints
+------------------------------------------------------------------- */
+@media (max-width: 599px) {
+  #app {
+    margin: 1rem;
+    padding: 1rem;
+  }
+  .todo-header h1 {
+    font-size: 1.5rem;
+  }
+  .todo-input form {
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 899px) {
+  #app {
+    margin: 1.5rem auto;
+  }
+  .todo-input form {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .todo-input input {
+    flex: 2;
+  }
+  .todo-input textarea {
+    flex: 1;
+    height: 2.5rem;
+  }
+  .todo-input button[type="submit"] {
+    margin-top: 0.25rem;
+  }
+}
+
+@media (min-width: 900px) {
+  #app {
+    margin: 2rem auto;
+  }
+  .todo-input form {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .todo-input input {
+    flex: 3;
+  }
+  .todo-input textarea {
+    flex: 2;
+    height: 2.5rem;
+  }
+}
