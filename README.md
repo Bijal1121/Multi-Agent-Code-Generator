@@ -1,36 +1,50 @@
-# 🚀 Multi-Agent-Code-Generator
+# Multi-Agent-Code-Generator
 
 > An AI-powered system that transforms natural language into complete,
 > structured, and runnable software projects.
 
-## 🧠 Overview
+------------------------------------------------------------------------
+
+## Overview
 
 Multi-Agent-Code-Generator simulates a real development team using a
-multi-agent workflow built with **LangGraph**.\
-Instead of generating isolated snippets, it follows a structured
+structured multi-agent workflow built with **LangGraph**.\
+Instead of generating isolated snippets, it follows a disciplined
 engineering pipeline --- planning, architecting, and coding across
 multiple files.
 
-Describe your idea.\
-The system builds the project.
+------------------------------------------------------------------------
+
+## System Flow Diagram
+
+``` mermaid
+flowchart TD
+    A[User Prompt] --> B[Planner Agent]
+    B --> C[Project Blueprint]
+    C --> D[Architect Agent]
+    D --> E[File-Level Engineering Tasks]
+    E --> F[Coder Agent]
+    F --> G[Structured Codebase Output]
+    G --> H[Runnable Application]
+```
 
 ------------------------------------------------------------------------
 
-## 🏗️ Architecture
+## Architecture
 
-### 📝 Planner Agent
+### Planner Agent
 
 -   Interprets the user request\
 -   Defines scope and requirements\
 -   Generates a structured project blueprint
 
-### 🏛 Architect Agent
+### Architect Agent
 
 -   Breaks the blueprint into file-level engineering tasks\
 -   Assigns responsibilities per file\
 -   Provides implementation context
 
-### 💻 Coder Agent
+### Coder Agent
 
 -   Implements each task\
 -   Writes directly into project files\
@@ -39,7 +53,7 @@ The system builds the project.
 
 ------------------------------------------------------------------------
 
-## 🔥 Example Prompts
+## Example Prompts
 
 -   Create a to-do list application using HTML, CSS, and JavaScript\
 -   Build a simple calculator web application\
@@ -48,7 +62,7 @@ The system builds the project.
 
 ------------------------------------------------------------------------
 
-## 🧰 Tech Stack
+## Tech Stack
 
 -   LangGraph -- Multi-agent orchestration\
 -   Groq API -- LLM inference\
@@ -58,7 +72,7 @@ The system builds the project.
 
 ------------------------------------------------------------------------
 
-## ⚙️ Installation
+## Installation
 
 ``` bash
 git clone <your-repo-url>
@@ -85,16 +99,7 @@ python main.py
 
 ------------------------------------------------------------------------
 
-## 🎯 Use Cases
-
--   Rapid prototyping\
--   Automated project scaffolding\
--   AI-assisted software engineering\
--   Multi-agent workflow experimentation
-
-------------------------------------------------------------------------
-
-## 🔐 Security
+## Security
 
 -   Never commit API keys\
 -   Always use environment variables\
@@ -102,3 +107,6 @@ python main.py
 
 ------------------------------------------------------------------------
 
+## License
+
+Add your license information here.
