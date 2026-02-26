@@ -8,7 +8,7 @@
 ## Overview
 
 Multi-Agent-Code-Generator simulates a real development team using a
-structured multi-agent workflow built with **LangGraph**.\
+structured multi-agent workflow built with **LangGraph**.
 Instead of generating isolated snippets, it follows a disciplined
 engineering pipeline --- planning, architecting, and coding across
 multiple files.
@@ -34,40 +34,40 @@ flowchart TD
 
 ### Planner Agent
 
--   Interprets the user request\
--   Defines scope and requirements\
+-   Interprets the user request
+-   Defines scope and requirements
 -   Generates a structured project blueprint
 
 ### Architect Agent
 
--   Breaks the blueprint into file-level engineering tasks\
--   Assigns responsibilities per file\
+-   Breaks the blueprint into file-level engineering tasks
+-   Assigns responsibilities per file
 -   Provides implementation context
 
 ### Coder Agent
 
--   Implements each task\
--   Writes directly into project files\
--   Maintains structural consistency\
+-   Implements each task
+-   Writes directly into project files
+-   Maintains structural consistency
 -   Produces runnable output
 
 ------------------------------------------------------------------------
 
 ## Example Prompts
 
--   Create a to-do list application using HTML, CSS, and JavaScript\
--   Build a simple calculator web application\
--   Create a blog API using FastAPI and SQLite\
+-   Create a to-do list application using HTML, CSS, and JavaScript
+-   Build a simple calculator web application
+-   Create a blog API using FastAPI and SQLite
 -   Generate a REST API with authentication and database integration
 
 ------------------------------------------------------------------------
 
 ## Tech Stack
 
--   LangGraph -- Multi-agent orchestration\
--   Groq API -- LLM inference\
--   Python -- Core runtime\
--   uv -- Dependency & environment management\
+-   LangGraph -- Multi-agent orchestration
+-   Groq API -- LLM inference
+-   Python -- Core runtime
+-   uv -- Dependency & environment management
 -   python-dotenv -- Environment configuration
 
 ------------------------------------------------------------------------
@@ -101,8 +101,8 @@ python main.py
 
 ## Security
 
--   Never commit API keys\
--   Always use environment variables\
+-   Never commit API keys
+-   Always use environment variables
 -   Rotate keys if exposed
 
 ------------------------------------------------------------------------
@@ -110,3 +110,4 @@ python main.py
 ## License
 
 Add your license information here.
+
